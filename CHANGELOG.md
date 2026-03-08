@@ -22,6 +22,10 @@
 - `/skill-creator` — fixed `python -m` module paths to direct script paths, removed `/cx-code-review` reference
 - `/skill-optimizer` — decoupled workspace path from skill-creator directory (now `user/$SKILL_NAME/$SKILL_NAME-workspace`)
 
+### Removed
+- `docs/adr/001-initial-architecture.md` — internal planning document, not needed in public repo
+- `docs/plans/mvp-plan.md` — internal planning document, not needed in public repo
+
 ### Added
 - Project scaffolded with Claude Code skills framework
 - 20 stack-agnostic skills across 5 categories
