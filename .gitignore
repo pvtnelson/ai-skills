@@ -1,0 +1,8 @@
+.env
+*.pem
+*.key
+secrets/
+credentials*
+*.secret
+.DS_Store
+*.log
