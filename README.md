@@ -148,7 +148,7 @@ No changes are applied without explicit human approval.
 
 Skills are markdown files (not code) injected into Claude Code's context at runtime. No build step, no compilation — the git repo is the package.
 
-**Key design decisions** (see [ADR-001](docs/adr/001-initial-architecture.md)):
+**Key design decisions:**
 - **Convention over configuration** — create a directory with SKILL.md, run `setup.sh`, done
 - **Progressive disclosure** — SKILL.md stays lean (≤500 lines), heavy content in subdirectories loaded on demand
 - **Constitution-driven quality** — `FRAMEWORK_STANDARDS.md` defines 5 standards, `setup.sh` enforces them automatically
@@ -163,9 +163,7 @@ ai-skills/
 │   ├── ...
 │   └── wrap-up/
 ├── docs/
-│   ├── FRAMEWORK_STANDARDS.md # Constitution — source of truth
-│   ├── adr/                   # Architecture Decision Records
-│   └── plans/                 # Implementation plans
+│   └── FRAMEWORK_STANDARDS.md # Constitution — source of truth
 ├── examples/                  # Example custom skills
 ├── setup.sh                   # Validation + symlink pipeline
 ├── .env.example               # Configuration template
