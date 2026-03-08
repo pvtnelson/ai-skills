@@ -52,10 +52,9 @@ Example project scopes (for illustration):
 
 | Scope | Contains |
 |-------|----------|
-| `complexr/` | VvE platform logic (FastAPI, PostgreSQL RLS, Next.js) |
-| `homelab/` | Docker Swarm, Proxmox, infrastructure operations |
-| `website/` | Personal website (Vite, Vercel, blog) |
-| `gameservers/` | Game server management |
+| `my-webapp/` | Web application-specific logic (framework, ORM, auth patterns) |
+| `infra/` | Infrastructure operations (orchestration, provisioning, monitoring) |
+| `my-cli/` | CLI tool-specific workflows |
 
 **Rule:** A `user/` skill must never reference project-specific frameworks, APIs, or domain concepts. If domain logic is needed, create a project-scoped variant (e.g., `/decision-critic` → `/my-project-decision-critic`).
 
@@ -65,11 +64,11 @@ Example project scopes (for illustration):
 
 Skills that mutate infrastructure or deploy code must default to `--dry-run` mode. The SKILL.md must show what *would* happen and require explicit user confirmation before executing. Skills with side effects set `disable-model-invocation: true` in frontmatter to prevent autonomous triggering.
 
-Current mutator skills: `/hl-deploy`, `/hl-bump-config`, `/cx-build-deploy`, `/cx-migrate`, `/gsm`, `/init-repo`, `/wrap-up`, `/write-blog`.
+Examples of mutator skills: `/init-repo`, `/wrap-up`, and any project-scoped deploy or migration skills.
 
 ### CHANGELOG gate
 
-Every skill modification (create, improve, archive, restore) must update `CHANGELOG.md` under `[Unreleased]` before committing. Enforced by `/code-review`, `/cx-code-review`, and `/skill-manager`.
+Every skill modification (create, improve, archive, restore) must update `CHANGELOG.md` under `[Unreleased]` before committing. Enforced by `/code-review` and `/skill-manager`.
 
 ### Git safety
 

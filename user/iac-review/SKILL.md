@@ -38,14 +38,11 @@ Read all `.tf` files to understand the infrastructure being defined.
 
 Scan for hardcoded values that should be variables:
 
-```bash
-# Hardcoded IPs, CIDRs, ARNs, resource IDs
-grep -rn --include="*.tf" -E '(10\.\d+\.\d+\.\d+|172\.\d+\.\d+\.\d+|192\.168\.\d+\.\d+)' "${ARGUMENTS:-.}" || true
-grep -rn --include="*.tf" -E 'arn:aws:|projects/[a-z]|subscriptions/' "${ARGUMENTS:-.}" || true
+Use Grep to search for hardcoded values in `*.tf` files:
 
-# Hardcoded regions, zones, account IDs
-grep -rn --include="*.tf" -E '"(us-east-1|eu-west-1|westeurope|eastus)"' "${ARGUMENTS:-.}" || true
-```
+- **Private IPs/CIDRs**: `10\.\d+\.\d+\.\d+`, `172\.\d+\.\d+\.\d+`, `192\.168\.\d+\.\d+`
+- **Cloud resource identifiers**: `arn:aws:`, `projects/[a-z]`, `subscriptions/`, `resourcegroups`
+- **Hardcoded regions/zones**: any region string that should be a variable (e.g., `us-east-1`, `eu-west-1`, `westeurope`, `asia-east1`)
 
 Every environment-specific value should be a `variable` with a sensible default or required input.
 

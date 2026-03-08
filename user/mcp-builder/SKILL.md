@@ -9,7 +9,7 @@ allowed-tools: [Bash, Read, Edit, Write, Glob, Grep, WebFetch, WebSearch, Agent]
 
 Create MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. The quality of an MCP server is measured by how well it enables LLMs to accomplish real-world tasks.
 
-`$ARGUMENTS` = the service or API to build an MCP server for (e.g., "Nextcloud WebDAV", "Proxmox API", "BookStack").
+`$ARGUMENTS` = the service or API to build an MCP server for (e.g., "GitHub API", "Slack", "Jira", "Stripe").
 
 ## Step 0: Usage Logging
 

@@ -61,7 +61,7 @@ After creating the plan, read the review prompt template:
 cat ${CLAUDE_SKILL_DIR}/references/review-prompt.md
 ```
 
-Then spawn the review subagent using the Agent tool (`subagent_type: "general-purpose"`). Insert the plan from Step 2 where the template says `[INSERT PLAN HERE]`.
+Then spawn the review subagent using the Agent tool (`subagent_type: "general-purpose"`). Insert the plan from Step 2 where the template says `[INSERT PLAN HERE]`. Populate the `[INSERT PROJECT CONTEXT HERE]` section by reading the project's CLAUDE.md and README.md — summarize the stack, architecture, and key constraints so the reviewer has project-specific context.
 
 ## Step 4: Iterate
 
