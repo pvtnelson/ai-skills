@@ -1,15 +1,15 @@
 ---
 name: iac-review
-description: Terraform infrastructure code reviewer — audit .tf files for state management, hardcoded values, module composition, and security misconfigurations. Use when reviewing Terraform code or planning infrastructure changes.
+description: Infrastructure-as-code reviewer — audit Terraform, Pulumi, CloudFormation, or other IaC files for state management, hardcoded values, module composition, and security misconfigurations. Use when reviewing Terraform code, planning infrastructure changes, or auditing IaC.
 argument-hint: "[.tf file or directory]"
 allowed-tools: [Bash, Read, Glob, Grep]
 ---
 
-# Terraform / IaC Reviewer
+# Infrastructure-as-Code Reviewer
 
-You are an **Infrastructure Engineer** reviewing Terraform code for best practices, security, and maintainability.
+You are an **Infrastructure Engineer** reviewing IaC for best practices, security, and maintainability.
 
-`$ARGUMENTS` = directory containing .tf files, or specific file path (defaults to current directory)
+`$ARGUMENTS` = directory containing IaC files, or specific file path (defaults to current directory)
 
 ## Step 0: Usage Logging
 
@@ -17,72 +17,67 @@ You are an **Infrastructure Engineer** reviewing Terraform code for best practic
 echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) iac-review" >> ~/.claude/skill-usage.log
 ```
 
-## Review Process
+## Step 1: Discover IaC Files
 
-## Step 1: Discover Terraform Files
+Use Glob to find IaC files in the target:
 
-```bash
-find "${ARGUMENTS:-.}" -name "*.tf" -o -name "*.tfvars" | sort
-```
+- `**/*.tf`, `**/*.tfvars` (Terraform)
+- `**/*.hcl` (HCL-based configs)
+- `**/Pulumi.*`, `**/*.pulumi.ts` (Pulumi)
+- `**/*.template`, `**/*.cfn.yml`, `**/*.cfn.json` (CloudFormation)
 
-Read all `.tf` files to understand the infrastructure being defined.
+Read all discovered files to understand the infrastructure being defined.
+
+If no IaC files are found, report "No IaC files found in target" and stop.
 
 ## Step 2: State Management
 
-- [ ] **Remote backend configured** — state stored in a remote backend (S3, Azure Blob, GCS, Terraform Cloud), not local
+Use Grep to check for backend configuration in the IaC files:
+
+- Search for `backend "` or `backend {` in `*.tf` files — if missing, state is local (flag as critical)
+- Search for `*.tfstate` in `.gitignore` — if missing, state may be committed (flag as critical)
+- Search for `sensitive\s*=\s*true` on output blocks — flag outputs that contain secrets but lack the sensitive marker
+
+Checklist:
+- [ ] **Remote backend configured** — state stored remotely (S3, Azure Blob, GCS, Terraform Cloud), not local
 - [ ] **State locking enabled** — DynamoDB table, Azure Blob lease, or equivalent
 - [ ] **State file not committed** — `*.tfstate` in `.gitignore`
 - [ ] **Sensitive outputs marked** — `sensitive = true` on outputs containing secrets
 
 ## Step 3: Hardcoded Values
 
-Scan for hardcoded values that should be variables:
+Use Grep to actively scan for hardcoded values that should be variables:
 
-Use Grep to search for hardcoded values in `*.tf` files:
-
-- **Private IPs/CIDRs**: `10\.\d+\.\d+\.\d+`, `172\.\d+\.\d+\.\d+`, `192\.168\.\d+\.\d+`
-- **Cloud resource identifiers**: `arn:aws:`, `projects/[a-z]`, `subscriptions/`, `resourcegroups`
-- **Hardcoded regions/zones**: any region string that should be a variable (e.g., `us-east-1`, `eu-west-1`, `westeurope`, `asia-east1`)
+1. **Private IPs/CIDRs** — search `*.tf` for: `10\.\d+\.\d+\.\d+`, `172\.\d+\.\d+\.\d+`, `192\.168\.\d+\.\d+`
+2. **Cloud resource identifiers** — search for: `arn:aws:`, `projects/[a-z]`, `subscriptions/`, `resourcegroups`
+3. **Hardcoded regions/zones** — search for common region strings in quotes: `us-east`, `eu-west`, `westeurope`, `eastus`, `asia-east`, `ap-southeast`
+4. **Account/project IDs** — search for: `\d{12}` (AWS account IDs), `project_id\s*=\s*"[^"]*"`
 
 Every environment-specific value should be a `variable` with a sensible default or required input.
 
-## Step 4: Module Composition
+## Step 4: Module & Security Review
 
-- [ ] **Modules used for reuse** — repeated resource patterns extracted into modules
-- [ ] **Module sources pinned** — version constraints on registry modules (`version = "~> 3.0"`)
-- [ ] **Module interfaces clean** — inputs are typed with descriptions, outputs documented
-- [ ] **No circular dependencies** — modules reference each other cleanly
-- [ ] **Root module is thin** — orchestrates modules, minimal direct resource definitions
-
-## Step 5: Security Misconfigurations
-
-- [ ] **No public access by default** — S3 buckets, storage accounts, databases are private unless explicitly justified
-- [ ] **Encryption enabled** — storage, databases, and secrets use encryption at rest
-- [ ] **Network restrictions** — security groups / NSGs follow least-privilege (no `0.0.0.0/0` ingress on sensitive ports)
-- [ ] **IAM least privilege** — roles and policies grant minimum required permissions
-- [ ] **No secrets in .tf files** — passwords, keys, tokens are sourced from vault or variables (never hardcoded)
-- [ ] **Logging enabled** — CloudTrail, Azure Monitor, or equivalent configured for audit trail
-
-## Step 6: Code Quality
-
-- [ ] **Consistent naming** — resources follow a naming convention (`project-env-resource`)
-- [ ] **Descriptions on variables** — all `variable` blocks have `description`
-- [ ] **Type constraints** — variables have `type` defined
-- [ ] **Lifecycle rules** — `prevent_destroy` on critical resources (databases, DNS zones)
-- [ ] **Tags/labels** — all resources tagged with at minimum: environment, project, owner
-- [ ] **Formatting** — `terraform fmt` compliant
-
-## Step 7: Validation
-
-Run available validation tools:
+Load the full checklist from the reference file:
 
 ```bash
-cd "${ARGUMENTS:-.}"
-terraform fmt -check -recursive 2>/dev/null || echo "terraform fmt check failed or not available"
-terraform validate 2>/dev/null || echo "terraform validate failed or not initialized"
+cat ${CLAUDE_SKILL_DIR}/references/iac-checklist.md
 ```
 
-## Step 8: Output Format
+Apply the relevant sections based on what was discovered in Step 1. Use Grep to verify each check against the actual files — do not rely on manual reading alone.
+
+## Step 5: Validation
+
+Run available validation tools if they are installed. Skip gracefully if unavailable:
+
+```bash
+command -v terraform >/dev/null && (cd "${ARGUMENTS:-.}" && terraform fmt -check -recursive 2>/dev/null) || echo "terraform CLI not available — skipping fmt/validate"
+command -v tflint >/dev/null && (cd "${ARGUMENTS:-.}" && tflint 2>/dev/null) || true
+command -v checkov >/dev/null && checkov -d "${ARGUMENTS:-.}" --quiet 2>/dev/null || true
+```
+
+If no tools are available, note this in the output and rely on the manual review from Steps 2-4.
+
+## Step 6: Output Report
 
 ```markdown
 ## IaC Review: [Subject]
@@ -90,16 +85,26 @@ terraform validate 2>/dev/null || echo "terraform validate failed or not initial
 ### Summary
 [1-2 sentence overview of the infrastructure being defined]
 
+### Stack Detected
+[Terraform/Pulumi/CloudFormation, provider(s), approximate resource count]
+
 ### State Management
-[PASS / FAIL — details]
+| Check | Status | Notes |
+|-------|--------|-------|
+| Remote backend | PASS/FAIL | ... |
+| State locking | PASS/FAIL | ... |
+| State not committed | PASS/FAIL | ... |
+| Sensitive outputs | PASS/FAIL | ... |
 
 ### Findings
 
 #### Critical (security risk or data loss potential)
-- `file:line` — [description]
+- **[IAC-001]**: [Title] — `file:line`
+  - Risk: [what could go wrong]
+  - Fix: [specific change]
 
 #### Warning (best practice violation)
-- `file:line` — [description]
+- **[IAC-NNN]**: [Title] — `file:line`
 
 #### Nit (style or convention)
 - `file:line` — [description]

@@ -3,6 +3,10 @@
 ## [Unreleased]
 
 ### Changed
+- `/iac-review` — rewritten: Glob instead of find, Grep with concrete patterns for hardcoded values, graceful skip when terraform CLI unavailable, checklists extracted to `references/iac-checklist.md`, broader IaC support (Pulumi, CloudFormation), structured output with state management table
+- `/wrap-up` — rewritten: CHANGELOG gate, concrete diff-based doc update instructions, structured session summary output, commit message format with Co-Authored-By, gate check for empty changes
+- `/update-docs` — rewritten: CHANGELOG gate, concrete diff-comparison instructions, gate check for empty changes, structured output summary table
+- `/take-note` — rewritten: concrete 5-step brain dump transformation (extract title, group by theme, infer structure, generate backlinks, fill frontmatter), Grep for related note search, added Grep to allowed-tools
 - `/sec-audit` — major overhaul: OSV.dev API vulnerability scanning (single + batch), OWASP Top 10 / CWE classification, CVE tracking table in output, infrastructure & container security checks, progressive disclosure with `references/` (owasp-top10.md, code-review-checks.md, iac-checks.md), local scanner fallback (trivy, grype, pip-audit, npm audit, govulncheck)
 - `/iac-review` — replaced hardcoded bash grep with Grep tool instructions, broadened region patterns
 - `/doc-gen` — API docs guide generalized beyond FastAPI
