@@ -21,6 +21,10 @@
 - `/prompt-engineer` — renumbered Step 2.5 → Step 3, Step 3 → Step 4 (consistent Step 0-N protocol)
 - `/skill-creator` — fixed `python -m` module paths to direct script paths, removed `/cx-code-review` reference
 - `/skill-optimizer` — decoupled workspace path from skill-creator directory (now `user/$SKILL_NAME/$SKILL_NAME-workspace`)
+- `/skill-manager`, `/skill-optimizer`, `/skill-creator`, `/skill-refiner` — replaced hardcoded `$PROJECTS_DIR/claude-skills` with dynamic `$SKILLS_REPO` (sourced from `skills-env.sh`)
+- `/prompt-engineer` — replaced "claude-skills protocol" with "skills framework protocol"
+- `setup.sh` — now exports `SKILLS_REPO` in `skills-env.sh` (resolves to repo install location dynamically)
+- `README.md` — replaced `<your-org>` placeholder with actual repo URL, added template tip
 
 ### Removed
 - `docs/adr/001-initial-architecture.md` — internal planning document, not needed in public repo
@@ -32,3 +36,6 @@
 - setup.sh with automated validation and symlink management
 - FRAMEWORK_STANDARDS.md constitution
 - Post-merge git hook for auto-sync
+- `.github/workflows/validate.yml` — CI pipeline runs `setup.sh` on push and PR to main
+- `CONTRIBUTING.md` — contributor guidelines with PR checklist and framework standards
+- `user/skill-creator/scripts/requirements.txt` — Python dependencies for eval scripts

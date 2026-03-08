@@ -156,6 +156,7 @@ cat > "$SKILLS_ENV" <<ENVEOF
 # Re-run setup.sh to regenerate after changing .env.
 export PROJECTS_DIR="${PROJECTS_DIR}"
 export GITHUB_ORG="${GITHUB_ORG}"
+export SKILLS_REPO="${REPO_DIR}"
 export SKILL_USAGE_LOG="${USAGE_LOG}"
 export SKILL_FEEDBACK_LOG="${FEEDBACK_LOG}"
 ENVEOF

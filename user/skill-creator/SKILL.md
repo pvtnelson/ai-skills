@@ -74,7 +74,7 @@ Check available MCPs for research (docs, similar skills, best practices). Use su
 Place the skill in the correct scope directory:
 ```bash
 source ~/.claude/skills-env.sh
-mkdir -p "$PROJECTS_DIR/claude-skills/$SCOPE/$SKILL_NAME"
+mkdir -p "$SKILLS_REPO/$SCOPE/$SKILL_NAME"
 ```
 
 ### Frontmatter (required)
@@ -130,7 +130,7 @@ Output: feat(auth): implement JWT-based authentication
 After writing the skill, register it:
 
 ```bash
-cd "$PROJECTS_DIR/claude-skills" && bash setup.sh
+cd "$SKILLS_REPO" && bash setup.sh
 ```
 
 This validates the SKILL.md against the agentskills.io spec and creates the symlink in `~/.claude/skills/`.

@@ -125,7 +125,7 @@ If any check fails, revise the prompt before proceeding. State which items faile
 
 Present the prompt in a markdown code block, ready to copy-paste.
 
-If the target is a Claude skill (SKILL.md), write it following the claude-skills protocol (Step 0-3, frontmatter, 500-line limit) and run `setup.sh` to validate.
+If the target is a Claude skill (SKILL.md), write it following the skills framework protocol (Step 0-N, frontmatter, 500-line limit) and run `setup.sh` to validate.
 
 For all other platforms, output the prompt with platform-specific deployment notes.
 

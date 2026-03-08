@@ -1,0 +1,7 @@
+# Dependencies for skill-creator evaluation scripts.
+# Install: pip install -r requirements.txt
+#
+# Note: These scripts also require the `claude` CLI to be installed
+# and authenticated (used via subprocess for eval runs).
+
+PyYAML>=6.0

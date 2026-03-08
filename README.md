@@ -55,11 +55,13 @@ Unlike one-off prompts, skills are:
 ### 1. Clone and configure
 
 ```bash
-git clone https://github.com/<your-org>/ai-skills.git
+git clone https://github.com/pvtnelson/ai-skills.git
 cd ai-skills
 cp .env.example .env
-# Edit .env with your paths and preferences
+# Edit .env — set PROJECTS_DIR to your workspace root
 ```
+
+> **Tip:** You can also use GitHub's "Use this template" button to create your own copy without fork history.
 
 ### 2. Run setup
 

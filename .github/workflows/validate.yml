@@ -1,0 +1,25 @@
+name: Validate Skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure environment
+        run: |
+          cp .env.example .env
+          sed -i "s|PROJECTS_DIR=.*|PROJECTS_DIR=$HOME/projects|" .env
+          mkdir -p "$HOME/projects"
+          mkdir -p "$HOME/.claude/skills"
+
+      - name: Run setup.sh (validate + link)
+        run: |
+          chmod +x setup.sh
+          ./setup.sh

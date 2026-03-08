@@ -71,19 +71,19 @@ If body exceeds 500 lines: move reference material to `references/`, scripts to 
   assets/               # Optional — templates, static files
 ```
 
-No empty subdirectories. Verify correct scope directory under `$PROJECTS_DIR/claude-skills/`.
+No empty subdirectories. Verify correct scope directory under `$SKILLS_REPO/`.
 
 ### Validation
 
 ```bash
-cd "$PROJECTS_DIR/claude-skills" && bash setup.sh 2>&1 | grep -E "$(basename "$SKILL_DIR")"
+cd "$SKILLS_REPO" && bash setup.sh 2>&1 | grep -E "$(basename "$SKILL_DIR")"
 ```
 
 ## Step 3: Output and CHANGELOG
 
 Present the refined skill, list changes from the original, run validation.
 
-Update `$PROJECTS_DIR/claude-skills/CHANGELOG.md` under `[Unreleased]`.
+Update `$SKILLS_REPO/CHANGELOG.md` under `[Unreleased]`.
 
 ### Final Checklist
 
