@@ -215,6 +215,7 @@ done
 echo ""
 
 # --- Project-scoped skills ---
+if [ "${#PROJECTS[@]}" -gt 0 ]; then
 for project in "${!PROJECTS[@]}"; do
   project_dir="${PROJECTS[$project]}"
   skills_target="$project_dir/.claude/skills"
@@ -273,9 +274,10 @@ for project in "${!PROJECTS[@]}"; do
 
   echo ""
 done
+fi
 
 # --- Archive summary ---
-archived_count=$(find "$REPO_DIR/archive" -name "SKILL.md" 2>/dev/null | wc -l)
+archived_count=$( (find "$REPO_DIR/archive" -name "SKILL.md" 2>/dev/null || true) | wc -l)
 if [ "$archived_count" -gt 0 ]; then
   echo "--- Archive ($archived_count archived skills) ---"
   for skill_file in $(find "$REPO_DIR/archive" -name "SKILL.md" | sort); do
