@@ -146,9 +146,18 @@ No changes are applied without explicit human approval.
 
 ## Architecture
 
+Skills are markdown files (not code) injected into Claude Code's context at runtime. No build step, no compilation — the git repo is the package.
+
+**Key design decisions** (see [ADR-001](docs/adr/001-initial-architecture.md)):
+- **Convention over configuration** — create a directory with SKILL.md, run `setup.sh`, done
+- **Progressive disclosure** — SKILL.md stays lean (≤500 lines), heavy content in subdirectories loaded on demand
+- **Constitution-driven quality** — `FRAMEWORK_STANDARDS.md` defines 5 standards, `setup.sh` enforces them automatically
+- **Two-tier scoping** — `user/` for generic skills, `<project>/` for domain-specific
+- **Self-learning loop** — feedback tracking, pattern analysis, V2 generation, human-gated deployment
+
 ```
 ai-skills/
-├── user/                      # 21 stack-agnostic global skills
+├── user/                      # 20 stack-agnostic global skills
 │   ├── architect/
 │   ├── code-review/
 │   ├── ...
