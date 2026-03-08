@@ -96,18 +96,18 @@ For a top-level project CLAUDE.md:
 # project-name — Claude Context
 
 ## Key Paths
-- `src/api/` — API routes (FastAPI)
-- `src/models/` — SQLAlchemy models with RLS
-- `tests/` — pytest suite, run with `source venv/bin/activate && pytest`
+- `src/` — Application source code
+- `tests/` — Test suite
+- `config/` — Configuration files
 
 ## Before You Change
-- Auth/RLS: read README.md § Invariants first
-- DB schema: check `alembic/versions/` for migration history
-- Frontend: `npm run build` after any component change
+- Auth: read README.md § Invariants first
+- DB schema: check migration history before modifying models
+- Frontend: rebuild after component changes
 
 ## Conventions
 - Commit style: imperative mood, concise
-- Branch: main (stable), dev (feature work)
+- Tests required for new functionality
 ```
 
 Rules:
@@ -145,7 +145,7 @@ cat ${CLAUDE_SKILL_DIR}/references/api-docs-guide.md
 
 Otherwise, skip this step.
 
-## Step 7: Output Summary
+## Step 6: Output Summary
 
 Present what was generated or updated:
 

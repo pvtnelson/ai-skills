@@ -21,10 +21,8 @@ echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) code-review" >> ~/.claude/skill-usage.log
 
 Check the root directory for a `CHANGELOG.md` file.
 
-- If the file exists but does not document the current changes under an `[Unreleased]` section, immediately stop the review and output: **CHANGES REQUESTED: Update CHANGELOG.md before this code can be approved.**
-- If the file does not exist, instruct the user to create one (or invoke `/init-repo` to scaffold it) before proceeding.
-
-This gate is non-negotiable. No code review proceeds without a current CHANGELOG.
+- If the file exists but does not document the current changes under an `[Unreleased]` section, output: **WARNING: CHANGELOG.md is not up to date. Update it before or after this review.**
+- If the file does not exist, note the gap in the output but proceed with the review. Not all projects maintain a CHANGELOG.
 
 ## Step 2: Gather the Changes
 
@@ -35,6 +33,12 @@ If a git range is given:
 ```bash
 git diff $ARGUMENTS --stat
 git diff $ARGUMENTS
+```
+
+If a PR number or URL is given:
+
+```bash
+gh pr diff $ARGUMENTS
 ```
 
 If a path is given, read the files directly.

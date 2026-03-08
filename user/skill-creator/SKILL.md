@@ -160,7 +160,7 @@ Save `total_tokens` and `duration_ms` from task notifications to `timing.json`.
 ### 6d: Grade and aggregate
 
 1. Grade each run using `${CLAUDE_SKILL_DIR}/agents/grader.md`
-2. Aggregate: `python -m ${CLAUDE_SKILL_DIR}/scripts.aggregate_benchmark <workspace>/iteration-N --skill-name <name>`
+2. Aggregate: `python ${CLAUDE_SKILL_DIR}/scripts/aggregate_benchmark.py <workspace>/iteration-N --skill-name <name>`
 3. Analyze using `${CLAUDE_SKILL_DIR}/agents/analyzer.md`
 4. Launch viewer: `python ${CLAUDE_SKILL_DIR}/eval-viewer/generate_review.py <workspace>/iteration-N --skill-name "my-skill" --benchmark <workspace>/iteration-N/benchmark.json`
 
@@ -180,7 +180,7 @@ Read `feedback.json` after user review. Empty feedback means it was fine.
 Run the optimization loop to improve skill triggering:
 
 ```bash
-python -m ${CLAUDE_SKILL_DIR}/scripts.run_loop \
+python ${CLAUDE_SKILL_DIR}/scripts/run_loop.py \
   --eval-set <path-to-trigger-eval.json> \
   --skill-path <path-to-skill> \
   --model <model-id> \
@@ -190,7 +190,7 @@ python -m ${CLAUDE_SKILL_DIR}/scripts.run_loop \
 
 ## Step 9: CHANGELOG Gate
 
-After creating or modifying a skill, update `$PROJECTS_DIR/claude-skills/CHANGELOG.md` under `[Unreleased]`. Add the skill name and what changed. This is enforced by `/code-review` and `/cx-code-review`.
+After creating or modifying a skill, update the project's `CHANGELOG.md` under `[Unreleased]`. Add the skill name and what changed. This is enforced by `/code-review`.
 
 ## Dependencies
 

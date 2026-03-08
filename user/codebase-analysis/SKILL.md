@@ -31,7 +31,7 @@ Systematically find every touchpoint related to `$ARGUMENTS`:
 4. **Configuration** — Search for environment variables, feature flags, config files, and constants that control behavior.
 5. **Tests** — Identify existing test coverage: which tests exercise this code path? Which boundary conditions are tested?
 
-Use the Explore agent for broad searches. Use direct Glob/Grep for targeted lookups. Cast a wide net — false positives are acceptable; missed dependencies are not.
+Use the Agent tool for broad searches that may require multiple rounds of exploration. Use direct Glob/Grep for targeted lookups. Cast a wide net — false positives are acceptable; missed dependencies are not.
 
 ## Step 2: Map Boundaries
 

@@ -14,6 +14,13 @@
 - `/mcp-builder` — replaced domain-specific examples with generic ones (GitHub API, Slack, Jira, Stripe)
 - `docs/FRAMEWORK_STANDARDS.md` — replaced domain-specific scope examples and mutator skill list with generic placeholders
 - `/prompt-engineer/references/conventions.md` — already clean (no changes needed)
+- `/code-review` — softened CHANGELOG gate (proceed without CHANGELOG), added `gh pr diff` for PR workflow
+- `/doc-gen` — fixed step numbering (5→7 skip → 5→6), replaced domain-specific CLAUDE.md template examples with generic ones
+- `/codebase-analysis` — replaced "Explore agent" with "Agent tool" (correct tool name)
+- `/init-repo` — removed BookStack reference, clarified /project-kickoff overlap in description
+- `/prompt-engineer` — renumbered Step 2.5 → Step 3, Step 3 → Step 4 (consistent Step 0-N protocol)
+- `/skill-creator` — fixed `python -m` module paths to direct script paths, removed `/cx-code-review` reference
+- `/skill-optimizer` — decoupled workspace path from skill-creator directory (now `user/$SKILL_NAME/$SKILL_NAME-workspace`)
 
 ### Added
 - Project scaffolded with Claude Code skills framework

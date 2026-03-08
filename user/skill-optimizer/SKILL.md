@@ -67,7 +67,7 @@ Parse into: total entries, date range, recurring patterns, most recent 10 verbat
 **Step 2b: Prepare workspace**
 
 ```bash
-workspace="$SKILLS_REPO/user/skill-creator/$SKILL_NAME-workspace"
+workspace="$SKILLS_REPO/user/$SKILL_NAME/$SKILL_NAME-workspace"
 mkdir -p "$workspace"
 cp "$skill_path" "$workspace/v1-baseline.md"
 ```

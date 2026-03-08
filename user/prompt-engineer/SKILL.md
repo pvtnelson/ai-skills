@@ -108,7 +108,7 @@ Analysis output format:
 - [ ] [actionable change]
 ```
 
-## Step 2.5: Context Engineering Gate
+## Step 3: Context Engineering Gate
 
 **Every prompt must pass this checklist before delivery. No exceptions.**
 
@@ -121,7 +121,7 @@ Analysis output format:
 
 If any check fails, revise the prompt before proceeding. State which items failed and what was changed.
 
-## Step 3: Deliver and Deploy
+## Step 4: Deliver and Deploy
 
 Present the prompt in a markdown code block, ready to copy-paste.
 

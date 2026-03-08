@@ -1,6 +1,6 @@
 ---
 name: init-repo
-description: Scaffolds a new repository with standard directories, git initialization, and template-based documentation (README, CHANGELOG). Use this when starting a new project in an empty directory.
+description: Scaffolds a new repository with standard directories, git initialization, and template-based documentation (README, CHANGELOG). Use this when starting a new project in an empty directory. Complements /project-kickoff (which handles planning and architecture decisions) — use /init-repo for the actual repo setup.
 argument-hint: "[project-name] [stack]"
 allowed-tools: [Bash, Read, Write, Glob]
 disable-model-invocation: true
@@ -40,7 +40,7 @@ If the directory already exists or the user wants to init locally only, fall bac
 
 ## Step 3: Directory Structure
 
-Create standard directories (no `docs/` — documentation lives in BookStack):
+Create standard directories:
 
 ```bash
 mkdir -p src/ tests/
@@ -137,4 +137,4 @@ find . -not -path './.git/*' -not -path './.git' | sort
 
 Remind the user:
 - Run `/doc-gen` periodically to keep documentation current
-- Detailed docs belong in BookStack, not in the repo
+- Keep README.md concise — detailed docs belong in your team's documentation platform
