@@ -12,7 +12,7 @@ Unlike one-off prompts, skills are:
 - **Measurable** — usage tracking and feedback loops for continuous improvement
 - **Self-managing** — meta skills create, refine, optimize, and archive other skills
 
-## Skills Included (21)
+## Skills Included (22)
 
 ### Architecture & Review
 | Skill | Description |
@@ -34,6 +34,7 @@ Unlike one-off prompts, skills are:
 | `/take-note` | Quick notes formatted as strict Obsidian markdown |
 | `/mcp-builder` | Guide for creating MCP servers (Python FastMCP / Node SDK) |
 | `/update-docs` | Update CLAUDE.md and README.md after completing a feature |
+| `/research` | Explore and summarize new subjects, technologies, or tools.|
 | `/teach-me` | Socratic teaching mode for learning by doing. Use when the user wants to learn how to build |
 
 ### Meta (Framework Management)
