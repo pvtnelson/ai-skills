@@ -1,0 +1,267 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram id="ai-skills-framework" name="AI Skills Framework">
+    <mxGraphModel dx="1722" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1600" pageHeight="1400" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="AI Skills Framework — Architecture" style="text;html=1;fontSize=24;fontStyle=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=none;strokeColor=none;fontColor=#1A2B3C;" parent="1" vertex="1">
+          <mxGeometry x="300" y="10" width="900" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="21 stack-agnostic skills — MIT License — 2026-03-09" style="text;html=1;fontSize=11;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="400" y="42" width="600" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s1-border" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#CCCCCC;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="20" y="75" width="400" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="s1-title" value="Repository Structure" style="text;html=1;fontSize=15;fontStyle=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#1A2B3C;" parent="1" vertex="1">
+          <mxGeometry x="50" y="80" width="250" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="repo-root" value="&lt;b&gt;ai-skills/&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:9px;color:#888&#39;&gt;Open-source skills framework (MIT)&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;spacingLeft=10;verticalAlign=top;spacingTop=5;" parent="1" vertex="1">
+          <mxGeometry x="30" y="108" width="380" height="385" as="geometry" />
+        </mxCell>
+        <mxCell id="scope-user" value="&lt;b&gt;user/&lt;/b&gt; — 21 global skills" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=8;verticalAlign=top;spacingTop=4;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="45" y="145" width="355" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="cat-arch" value="&lt;font style=&#39;font-size:8px;color:#555&#39;&gt;&lt;b&gt;Architecture &amp; Review (8):&lt;/b&gt; architect, code-review, sec-audit, iac-review, decision-critic, plan-review, refactor-audit, codebase-analysis&lt;/font&gt;" style="fontColor=#000000;rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#A5D6A7;align=left;spacingLeft=6;fontSize=8;" parent="1" vertex="1">
+          <mxGeometry x="55" y="168" width="335" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="cat-create" value="&lt;font style=&#39;font-size:8px;color:#555&#39;&gt;&lt;b&gt;Creation &amp; Docs (5):&lt;/b&gt; doc-gen, prompt-engineer, mcp-builder, take-note, update-docs&lt;/font&gt;" style="fontColor=#000000;rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#A5D6A7;align=left;spacingLeft=6;fontSize=8;" parent="1" vertex="1">
+          <mxGeometry x="55" y="200" width="335" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="cat-learn" value="&lt;font style=&quot;font-size:8px;color:#555&quot;&gt;&lt;b&gt;Learning (1):&lt;/b&gt; teach-me, research&lt;/font&gt;" style="fontColor=#000000;rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#A5D6A7;align=left;spacingLeft=6;fontSize=8;" parent="1" vertex="1">
+          <mxGeometry x="55" y="226" width="335" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="cat-meta" value="&lt;font style=&#39;font-size:8px;color:#555&#39;&gt;&lt;b&gt;Meta (4):&lt;/b&gt; skill-creator, skill-refiner, skill-manager, skill-optimizer&lt;/font&gt;" style="fontColor=#000000;rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#66BB6A;align=left;spacingLeft=6;fontSize=8;" parent="1" vertex="1">
+          <mxGeometry x="55" y="248" width="335" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="cat-proj" value="&lt;font style=&#39;font-size:8px;color:#555&#39;&gt;&lt;b&gt;Project Lifecycle (3):&lt;/b&gt; init-repo, project-kickoff, wrap-up&lt;/font&gt;" style="fontColor=#000000;rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#A5D6A7;align=left;spacingLeft=6;fontSize=8;" parent="1" vertex="1">
+          <mxGeometry x="55" y="274" width="335" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="scope-custom" value="&lt;b&gt;your-project/&lt;/b&gt; — add domain-specific skills here&lt;br&gt;&lt;font style=&#39;font-size:8px;color:#888&#39;&gt;setup.sh auto-detects and symlinks project-scoped skills&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;spacingLeft=8;verticalAlign=top;spacingTop=4;fontSize=10;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="45" y="330" width="355" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="scope-archive" value="&lt;b&gt;archive/&lt;/b&gt; — sunset skills (via /skill-manager archive)" style="fontColor=#999999;rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#CCCCCC;align=left;spacingLeft=8;fontSize=10;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="45" y="376" width="355" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="repo-files" value="&lt;b&gt;Root:&lt;/b&gt;&amp;nbsp; setup.sh&amp;nbsp; |&amp;nbsp; .env&amp;nbsp; |&amp;nbsp; CHANGELOG.md&amp;nbsp; |&amp;nbsp; .git/hooks/post-merge&amp;nbsp; |&amp;nbsp; docs/FRAMEWORK_STANDARDS.md" style="fontColor=#666666;rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#CCCCCC;align=center;fontSize=8;" parent="1" vertex="1">
+          <mxGeometry x="45" y="408" width="355" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="twotier" value="&lt;b&gt;Two-Tier Scoping:&lt;/b&gt; user/ for generic skills, your-project/ for domain-specific variants" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#E0E0E0;strokeColor=#BDBDBD;fontSize=8;fontStyle=0;" parent="1" vertex="1">
+          <mxGeometry x="45" y="434" width="355" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s2-border" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#CCCCCC;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="75" width="360" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="s2-title" value="Skill Anatomy" style="text;html=1;fontSize=15;fontStyle=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#1A2B3C;" parent="1" vertex="1">
+          <mxGeometry x="465" y="80" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="dir-box" value="&lt;b&gt;user/my-skill/&lt;/b&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;spacingLeft=10;verticalAlign=top;spacingTop=5;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="455" y="110" width="330" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="skillmd" value="&lt;b&gt;SKILL.md&lt;/b&gt; (required)&lt;br&gt;&lt;font style=&#39;font-size:8px;color:#555&#39;&gt;Frontmatter (name, description, allowed-tools) + Step 0-N body&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=6;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="470" y="140" width="300" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="dir-refs" value="&lt;b&gt;references/&lt;/b&gt;&amp;nbsp; Docs, checklists (loaded on demand)" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#A5D6A7;align=left;spacingLeft=6;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="470" y="184" width="300" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="dir-assets" value="&lt;b&gt;assets/&lt;/b&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Templates, scaffolds (loaded on demand)" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#A5D6A7;align=left;spacingLeft=6;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="470" y="214" width="300" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="dir-scripts" value="&lt;b&gt;scripts/&lt;/b&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Executable helpers (loaded on demand)" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#A5D6A7;align=left;spacingLeft=6;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="470" y="244" width="300" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="dir-evals" value="&lt;b&gt;evals/&lt;/b&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Test cases for benchmarking (optional)" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#CCCCCC;align=left;spacingLeft=6;fontSize=9;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="470" y="274" width="300" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="limit-note" value="&lt;b&gt;≤500 lines&lt;/b&gt; — SKILL.md is a lightweight router.&lt;br&gt;Heavy content goes in subdirectories, loaded via &lt;code&gt;${CLAUDE_SKILL_DIR}&lt;/code&gt;" style="fontColor=#666666;rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#FFE082;align=center;fontSize=8;" parent="1" vertex="1">
+          <mxGeometry x="455" y="320" width="330" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="portability-note" value="&lt;b&gt;Portability:&lt;/b&gt; ${CLAUDE_SKILL_DIR} for self-references, $PROJECTS_DIR for external paths. Never hardcode." style="fontColor=#666666;rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#FFE082;align=center;fontSize=8;" parent="1" vertex="1">
+          <mxGeometry x="455" y="355" width="330" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-border" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#CCCCCC;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="820" y="75" width="370" height="333" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-title" value="Framework Standards (Constitution)" style="text;html=1;fontSize=15;fontStyle=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#1A2B3C;" parent="1" vertex="1">
+          <mxGeometry x="840" y="80" width="340" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="std1" value="&lt;b&gt;1. Step 0-N Protocol&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:8px;color:#555&#39;&gt;Step 0: logging → Step 1: gate → Step 2: core → Step N: output&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=6;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="835" y="112" width="345" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="std2" value="&lt;b&gt;2. Portability&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:8px;color:#555&#39;&gt;No hardcoded paths — use ${CLAUDE_SKILL_DIR} and $PROJECTS_DIR&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=6;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="835" y="150" width="345" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="std3" value="&lt;b&gt;3. Progressive Disclosure&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:8px;color:#555&#39;&gt;SKILL.md ≤500 lines — overflow to references/, assets/, scripts/&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=6;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="835" y="188" width="345" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="std4" value="&lt;b&gt;4. Domain Isolation&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:8px;color:#555&#39;&gt;user/ = generic, your-project/ = domain-specific variants&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=6;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="835" y="226" width="345" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="std5" value="&lt;b&gt;5. Safety Gates&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:8px;color:#555&#39;&gt;Mutator skills default to dry-run — CHANGELOG gate on every change&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=6;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="835" y="264" width="345" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="std-writing" value="&lt;b&gt;Writing Style:&lt;/b&gt; positive framing, imperative mood, explain the why, one instruction one place" style="fontColor=#666666;rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#FFE082;align=center;fontSize=8;" parent="1" vertex="1">
+          <mxGeometry x="835" y="304" width="345" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="std-frontmatter" value="&lt;b&gt;Frontmatter (agentskills.io):&lt;/b&gt; name, description (required) | argument-hint, allowed-tools, disable-model-invocation (optional)" style="fontColor=#666666;rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#FFE082;align=center;fontSize=8;" parent="1" vertex="1">
+          <mxGeometry x="835" y="332" width="345" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="s4-border" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#CCCCCC;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="20" y="528" width="570" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="s4-title" value="Skill Lifecycle" style="text;html=1;fontSize=15;fontStyle=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#1A2B3C;" parent="1" vertex="1">
+          <mxGeometry x="30" y="533" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="lc-create" value="&lt;b&gt;Create&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:8px&#39;&gt;/skill-creator&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="35" y="568" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lc-arr1" value="" style="endArrow=classic;html=1;strokeColor=#666666;" parent="1" source="lc-create" target="lc-eval" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lc-eval" value="&lt;b&gt;Evaluate&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:8px&#39;&gt;with-skill vs baseline&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="150" y="568" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lc-arr2" value="" style="endArrow=classic;html=1;strokeColor=#666666;" parent="1" source="lc-eval" target="lc-refine" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lc-refine" value="&lt;b&gt;Refine&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:8px&#39;&gt;/skill-refiner&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="275" y="568" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lc-arr3" value="" style="endArrow=classic;html=1;strokeColor=#666666;" parent="1" source="lc-refine" target="lc-deploy" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lc-deploy" value="&lt;b&gt;Deploy&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:8px&#39;&gt;setup.sh&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="390" y="568" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lc-arr4" value="" style="endArrow=classic;html=1;strokeColor=#666666;" parent="1" source="lc-deploy" target="lc-monitor" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lc-monitor" value="&lt;b&gt;Monitor&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:8px&#39;&gt;usage log&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="495" y="568" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lc-feedback" value="" style="endArrow=classic;html=1;strokeColor=#FF6600;strokeWidth=2;curved=1;entryX=0.5;entryY=1;exitX=0.5;exitY=1;" parent="1" source="lc-monitor" target="lc-refine" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="535" y="638" />
+              <mxPoint x="320" y="638" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lc-feedback-label" value="&lt;font style=&#39;font-size:8px;color:#FF6600&#39;&gt;&lt;b&gt;feedback loop&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="380" y="633" width="80" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="lc-archive" value="&lt;font style=&#39;font-size:8px;color:#999&#39;&gt;&lt;b&gt;Sunset:&lt;/b&gt; /skill-manager archive → archive/ (symlinks cleaned by setup.sh)&lt;/font&gt;" style="fontColor=#999999;rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#CCCCCC;align=center;fontSize=8;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="35" y="658" width="540" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="s5-border" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#CCCCCC;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="610" y="528" width="580" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="s5-title" value="Self-Learning Loop" style="text;html=1;fontSize=15;fontStyle=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#1A2B3C;" parent="1" vertex="1">
+          <mxGeometry x="620" y="533" width="250" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="sl-underperf" value="&lt;b&gt;Skill underperforms&lt;/b&gt;" style="fontColor=#FFFFFF;rounded=1;whiteSpace=wrap;html=1;fillColor=#d32f2f;strokeColor=#b71c1c;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="625" y="573" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sl-arr1" value="" style="endArrow=classic;html=1;strokeColor=#666666;" parent="1" source="sl-underperf" target="sl-feedback" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sl-feedback" value="&lt;b&gt;Log feedback&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:7px&#39;&gt;/skill-manager feedback&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="755" y="573" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sl-arr2" value="" style="endArrow=classic;html=1;strokeColor=#666666;" parent="1" source="sl-feedback" target="sl-optimize" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sl-optimize" value="&lt;b&gt;≥3 entries?&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:7px&#39;&gt;/skill-optimizer analyze&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="875" y="573" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sl-arr3" value="" style="endArrow=classic;html=1;strokeColor=#666666;" parent="1" source="sl-optimize" target="sl-v2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sl-v2" value="&lt;b&gt;Generate V2&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:7px&#39;&gt;skill-creator A/B test&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="995" y="573" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sl-arr4" value="" style="endArrow=classic;html=1;strokeColor=#666666;" parent="1" source="sl-v2" target="sl-approve" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sl-approve" value="&lt;b&gt;HUMAN&lt;br&gt;APPROVAL&lt;/b&gt;" style="fontColor=#FFFFFF;rounded=1;whiteSpace=wrap;html=1;fillColor=#1565c0;strokeColor=#0d47a1;fontSize=9;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="1105" y="573" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sl-note" value="&lt;font style=&#39;font-size:8px;color:#666&#39;&gt;No changes applied without explicit human approval. Minimum 3 feedback entries required to trigger optimization.&lt;/font&gt;" style="fontColor=#666666;rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#FFE082;align=center;fontSize=8;" parent="1" vertex="1">
+          <mxGeometry x="625" y="623" width="550" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s6-border" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#CCCCCC;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="24" y="694" width="570" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="s6-title" value="Trigger Flow" style="text;html=1;fontSize=15;fontStyle=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#1A2B3C;" parent="1" vertex="1">
+          <mxGeometry x="30" y="713" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-user" value="&lt;b&gt;User types&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:8px&#39;&gt;/architect&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="35" y="748" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-arr1" value="" style="endArrow=classic;html=1;strokeColor=#666666;" parent="1" source="tf-user" target="tf-match" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-match" value="&lt;b&gt;Claude matches&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:8px&#39;&gt;description field&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="140" y="748" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-arr2" value="" style="endArrow=classic;html=1;strokeColor=#666666;" parent="1" source="tf-match" target="tf-inject" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-inject" value="&lt;b&gt;SKILL.md injected&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:8px&#39;&gt;into context window&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="265" y="748" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-arr3" value="" style="endArrow=classic;html=1;strokeColor=#666666;" parent="1" source="tf-inject" target="tf-exec" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-exec" value="&lt;b&gt;Execute Steps&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:8px&#39;&gt;Step 0 → N&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="400" y="748" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-arr4" value="" style="endArrow=classic;html=1;strokeColor=#666666;" parent="1" source="tf-exec" target="tf-log" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-log" value="&lt;b&gt;Log usage&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:8px&#39;&gt;~/.claude/skill-usage.log&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="510" y="748" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-note" value="&lt;font style=&#39;font-size:8px;color:#666&#39;&gt;No build step — the git repo IS the package. setup.sh symlinks skills to ~/.claude/skills/ where Claude Code discovers them.&lt;/font&gt;" style="fontColor=#666666;rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#FFE082;align=center;fontSize=8;" parent="1" vertex="1">
+          <mxGeometry x="35" y="803" width="540" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s7-border" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#CCCCCC;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="610" y="694" width="580" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="s7-title" value="setup.sh Pipeline" style="text;html=1;fontSize=15;fontStyle=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#1A2B3C;" parent="1" vertex="1">
+          <mxGeometry x="620" y="713" width="250" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ss-validate" value="&lt;b&gt;1. Validate&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:7px&#39;&gt;Spec check&lt;br&gt;every SKILL.md&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="625" y="748" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="ss-arr1" value="" style="endArrow=classic;html=1;strokeColor=#666666;" parent="1" source="ss-validate" target="ss-standards" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ss-standards" value="&lt;b&gt;2. Standards&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:7px&#39;&gt;Hardcoded paths&lt;br&gt;Step 0 check&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="735" y="748" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="ss-arr2" value="" style="endArrow=classic;html=1;strokeColor=#666666;" parent="1" source="ss-standards" target="ss-env" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ss-env" value="&lt;b&gt;3. Environment&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:7px&#39;&gt;Generate&lt;br&gt;skills-env.sh&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="845" y="748" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="ss-arr3" value="" style="endArrow=classic;html=1;strokeColor=#666666;" parent="1" source="ss-env" target="ss-symlink" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ss-symlink" value="&lt;b&gt;4. Symlink&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:7px&#39;&gt;~/.claude/skills/&lt;br&gt;+ project .claude/&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="955" y="748" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="ss-arr4" value="" style="endArrow=classic;html=1;strokeColor=#666666;" parent="1" source="ss-symlink" target="ss-report" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ss-report" value="&lt;b&gt;5. Report&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:7px&#39;&gt;[ok] [FAIL]&lt;br&gt;[WARN]&lt;/font&gt;" style="fontColor=#1A2B3C;rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="1065" y="748" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="ss-hook" value="&lt;font style=&#39;font-size:8px;color:#666&#39;&gt;&lt;b&gt;Auto-run:&lt;/b&gt; post-merge hook runs setup.sh after every git pull — symlinks always in sync&lt;/font&gt;" style="fontColor=#666666;rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#FFE082;align=center;fontSize=8;" parent="1" vertex="1">
+          <mxGeometry x="625" y="808" width="530" height="18" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
