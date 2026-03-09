@@ -12,7 +12,7 @@ Unlike one-off prompts, skills are:
 - **Measurable** — usage tracking and feedback loops for continuous improvement
 - **Self-managing** — meta skills create, refine, optimize, and archive other skills
 
-## Skills Included (20)
+## Skills Included (21)
 
 ### Architecture & Review
 | Skill | Description |
