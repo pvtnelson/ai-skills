@@ -34,6 +34,7 @@ Unlike one-off prompts, skills are:
 | `/take-note` | Quick notes formatted as strict Obsidian markdown |
 | `/mcp-builder` | Guide for creating MCP servers (Python FastMCP / Node SDK) |
 | `/update-docs` | Update CLAUDE.md and README.md after completing a feature |
+| `/teach-me` | Socratic teaching mode for learning by doing. Use when the user wants to learn how to build |
 
 ### Meta (Framework Management)
 | Skill | Description |
