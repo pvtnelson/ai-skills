@@ -54,6 +54,13 @@ Structure the output based on the depth:
 ### What It Is
 One paragraph — what it does, what problem it solves, where it fits in the stack.
 
+### Why It Exists                                                                                                   
+Answer these four questions in order to build understanding before diving into mechanics:                      
+1. **What problem does this solve?** — the pain point or gap that motivated its creation                            
+2. **Why does this approach even exist?** — what insight or shift made this solution possible                      
+3. **What were people doing before?** — the prior state of the art or workaround                 
+4. **What was wrong with that?** — the specific shortcomings that made a new approach necessary
+
 ### How It Works
 Key architecture concepts in 3-5 bullet points. Use analogies to things the user
 already knows.
