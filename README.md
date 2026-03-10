@@ -174,6 +174,6 @@ ai-skills/
 └── CHANGELOG.md
 ```
 
-## License
+## License 
 
 [MIT](LICENSE)
